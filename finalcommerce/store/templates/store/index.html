@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <title>Home Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand logonav" href="{% url 'store' %}">ClownShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Cửa hàng <span class="sr-only">(current)</span></a>
+            </li>
+       
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+               <a href="{% url 'login' %}"class="btn btn-warning lgbtn" style="margin-right: 10px;">Đăng nhập</a>
+               
+               <a href="{% url 'register' %}"class="btn btn-warning rgbtn">Đăng ký</a>
+            
+  
+          </div>
+        </div>
+      </nav>
+      <br>
+      <div class="container-fluid col-12">
+		<div id="slides" class="carousel slide" data-ride="carousel">
+			<ul class="carousel-indicators">
+				<li data-target="#slides" data-slide-to="0" class="active"></li>
+				<li data-target="#slides" data-slide-to="1" ></li>
+                <li data-target="#slides" data-slide-to="2" ></li>
+			
+			</ul>
+			<div class="carousel-inner" >
+			
+				<div class="carousel-item active">
+					
+					<img src="{% static 'images/bn3.jpg'%}" style="width: 100%;">
+				</div>
+				<div class="carousel-item ">
+					<img src="{% static 'images/bn1.jpg'%}" style="width: 100%;">
+				</div>
+                <div class="carousel-item ">
+					<img src="{% static 'images/bn2.jpg'%}" style="width: 100%;">
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="container-fluid">
+		<div class="row jumbotron">
+			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+				<p class="lead">
+					Hệ thống thương mại điện tử được xây dựng với Django !!!				
+				</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 ">
+				<a href="#">
+					<button type="button" class="btn btn-outline-secondary btn-lg">
+						Group 2
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+      <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>  
+</body>
+</html>

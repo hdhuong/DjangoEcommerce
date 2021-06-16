@@ -1,0 +1,62 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<br>
+	<div class="container-fluid col-12">
+		<div id="slides" class="carousel slide" data-ride="carousel">
+			<ul class="carousel-indicators">
+				<li data-target="#slides" data-slide-to="0" class="active"></li>
+				<li data-target="#slides" data-slide-to="1" ></li>
+				<li data-target="#slides" data-slide-to="2" ></li>
+			
+			</ul>
+			<div class="carousel-inner" >
+			
+				<div class="carousel-item active">
+					
+					<img src="{% static 'images/slide1.jpg'%}" style="max-height: 400px; " > 
+				</div>
+				<div class="carousel-item ">
+					<img src="{% static 'images/slide2.jpg'%}" style="max-height: 400px;">
+				</div>
+				<div class="carousel-item ">
+					<img src="{% static 'images/slide3.jpg'%}" style="max-height: 400px;">
+				</div>
+				
+				<img src="{% static 'images/sale.png'%}" alt="" style="float: right; width: 250px; height: 400px;">
+				
+			</div>
+		</div>
+		<br>
+		<div class="section-heading">
+			<h2>Products</h2>
+			<a href="#">view all products <i class="fa fa-angle-right"></i></a>
+		  </div>
+	</div>
+	<div class="row">
+		{% for product in products %}
+	
+		<div class="col-md-4">
+            <div class="product-item">
+              <a href="#"><img src="{{product.imageURL}}" alt=""></a>
+              <div class="down-content">
+                <a href="/details/{{product.id}}"><h4>{{product.name}}</h4></a>
+                <h6>{{product.price}}$</h6>
+                <p><button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button></p>
+                <ul class="stars">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (0)</span>
+              </div>
+            </div>
+          </div>
+
+		{% endfor %}
+	</div>
+	
+
+{% endblock content %}
