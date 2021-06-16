@@ -34,7 +34,7 @@ def detailPage(request,id):
 	items = order.orderitem_set.all()
 	cartItems= order.get_cart_items
 	
-	context = {'product' : product,'cartItems':cartItems ,'form':form }
+	context = {'product' : product,'cartItems':cartItems }
 	return render(request,'store/details.html',context)
 
 
