@@ -81,7 +81,43 @@
         </div>
         <!--Grid row-->
 
+    </main>
+    <h4 style="margin-left: 13px; ">Bình luận<i class="fa fa-comments" style="margin-left: 5px; color: rgb(133, 133, 187);"></i></h4>
+    {% for comment in product.comments.all%}
     
+    <h3 style="margin-left: 13px;"><i></i></h3>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-12">
+                <div class="d-flex flex-column comment-section" id="myGroup">
+                    <div class="bg-white p-2">
+                        <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://freesvg.org/img/abstract-user-flat-1.png" width="40">
+                            <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{{comment.author}}</span><span class="date text-black-50">{{comment.date}}</span></div>
+                        </div>
+                        <div class="mt-2">
+                            <p class="comment-text">{{comment.body|linebreaks}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <br>
+    {% if user.username%}
+        <form action="" method="POST">
+          {% csrf_token%}
+          <div class="d-flex flex-row align-items-start">
+            <img class="rounded-circle" src="https://cdn.pixabay.com/photo/2016/10/14/15/45/icon-1740415_640.png" width="40">
+            {{form.body}}
+          <input type="submit" value="Comment" class="btn btn-outline-secondary btn-sm" style="float: right; margin-left: 5px;">
+
+          </div>
+         
+      
+          </div>
+        </form>
+    {% endif%}
     <!--Main layout-->
 
      

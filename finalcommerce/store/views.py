@@ -33,8 +33,13 @@ def detailPage(request,id):
 	order , created = Order.objects.get_or_create(customer=customer,complete=False)
 	items = order.orderitem_set.all()
 	cartItems= order.get_cart_items
-	
-	context = {'product' : product,'cartItems':cartItems }
+	form = CommentForm()
+	if request.method == 'POST':
+		form = CommentForm(request.POST,author=request.user,product=product)
+		if form.is_valid():
+			form.save()
+		return HttpResponseRedirect(request.path)
+	context = {'product' : product,'cartItems':cartItems ,'form':form }
 	return render(request,'store/details.html',context)
 
 
